@@ -32,9 +32,28 @@ Os exemplos são apresentados através de duas linguagens diferentes: Linguagem 
 e Swift. Escolheu-se a linguagem C para demonstrar o uso de system calls pela
 facilidade com a qual a linguagem integra-se aos sistemas unix.
 
+Os exemplos em C são compilados com o GCC em plataformas linux ou clang no
+macOS. Será necessário instalar os autotools para compilar adequadamente os
+exemplos. No repositório estão apenas os arquivos necessários para gerar o
+package de compilação. No linux os autotools já deverão ser instalados pois são
+padrões para a grande maioria das distribuições. No macOS você pode instalá-los
+com o home brew:
+
+```shellscript
+brew install automake
+brew install autoconf
+brew install libtool
+```
+
+Mais instruções estarão nos respectivos diretórios dos exemplos. 
+
 A linguagem Swift foi utilizada no intuito de demonstrar como a Apple implementa
 algumas facilidades através da sua biblioteca Foundation. Instruções de
 compilação estarão disponíveis nos diretórios dos exemplos.
+
+Os exemplos em swift podem ser compilados em Linux usando o Swift para
+linux. [Veja aqui](https://swift.org/download/#using-downloads) como instalar o
+compilador Swift no seu linux para poder executar os exemplos.
 
 # Licença
 
