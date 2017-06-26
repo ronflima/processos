@@ -33,6 +33,12 @@
 #include <stdlib.h>
 
 #define MAX_CHILDREN 100
+
+/*
+ * O contador de processos retornados precisa, necessariamente, ser uma variável
+ * global. Esta variável é alterada dentro de um signal handler, uma função
+ * especial que é chamada assincronamente.
+ */
 static int returned_children = 0;
 
 static void
@@ -56,6 +62,7 @@ main(void)
           return 0;
         }
     }
+  /* Espera o signal handler sincronizar cada processo filho que retorna. */
   while (returned_children < MAX_CHILDREN)
     {
       printf("[Parent]: Returned children so far: %d\n", returned_children);
@@ -77,6 +84,19 @@ child_process(int number)
   sleep ((10 + number) % 30 + 1);
 }
 
+/*
+ * Handler de sinal. Este handler força o sincronismo com cada processo filho
+ * que retorna. Esta implementação é ruim, no entanto. A função signal não
+ * permite que sinais sejam enfileirados. Assim, se os filhos retornarem rápido
+ * demais, a função perde execução e não sincronizará os filhos, criando
+ * zumbis. Para uma implementação séria, o ideal é usar sigaction e realizar o
+ * enfileiramento de sinais.
+ *
+ * Este exemplo, no entanto, funciona por que é garantido que cada processo
+ * filho retorne um depois do outro. Eles foram projetados para fazer isso,
+ * visto que o tempo que esperam para retornar aumenta linearmente, de acordo
+ * com a ordem de criação de cada processo filho. 
+ */
 static void
 signal_handler(int sig)
 {
