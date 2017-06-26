@@ -5,8 +5,8 @@ necessário seguir o passo-a-passo:
 
 - certifique-se que você tem instalado no seu sistema um compilador C e os
   autotools.
-- execute o shell script _autogen.sh_. Este script irá criar toda a
-  infra-estrutra de compilação necessária usando os autotools.
+- execute o shell script _autogen.sh_. Este script criará toda a infra-estrutra
+  de compilação necessária usando os autotools.
 - execute o shell script _configure_. Este script é gerado pelos autotools e
   será responsável por gerar os makefiles.
 - execute: `make -j 4` para construir o executável.
