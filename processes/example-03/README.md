@@ -24,3 +24,10 @@ tabela de processos, colocando todo o sistema em xeque.
 Em um sistema de produção, a quantidade de processos que podem ser criados devem
 ser, necessariamente, limitados. Assim, evita-se que bugs ou até mesmos ataques
 externos tornem seu servidor inacessível.
+
+Execute o programa de exemplo em segundo plano para ter melhor visibilidade dos
+seus efeitos.
+
+```shellscript
+./exemplo-03 &
+```
