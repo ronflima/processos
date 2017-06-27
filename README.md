@@ -33,17 +33,9 @@ e Swift. Escolheu-se a linguagem C para demonstrar o uso de system calls pela
 facilidade com a qual a linguagem integra-se aos sistemas unix.
 
 Os exemplos em C são compilados com o GCC em plataformas linux ou clang no
-macOS. Será necessário instalar os autotools para compilar adequadamente os
-exemplos. No repositório estão apenas os arquivos necessários para gerar o
-package de compilação. No linux os autotools já deverão ser instalados pois são
-padrões para a grande maioria das distribuições. No macOS você pode instalá-los
-com o home brew:
-
-```shellscript
-brew install automake
-brew install autoconf
-brew install libtool
-```
+macOS. O código já tem tudo o que é preciso para compilar. Normalmente basta
+executar o script de configuração `config` e depois executar `make` para
+realizar a compilação.
 
 Mais instruções estarão nos respectivos diretórios dos exemplos. 
 

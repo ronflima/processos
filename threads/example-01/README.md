@@ -33,3 +33,25 @@ wrappers para todas as chamadas de sistema que podem bloquear uma rotina, para
 que estas chamadas sejam realizadas de forma a não bloquear. Isso pode levar a
 uma incompatibilidade em sistemas nos quais não há forma de não haver chamadas
 assíncronas.
+
+# Como compilar o exemplo
+
+Tudo o que é preciso já está no diretório. A `libdill` está como um sub-módulo
+do git. Portanto, será necessário realizar os seguintes comandos tão logo você
+tenha clonado este repositório:
+
+```shellscript
+git submodule init
+git submodule update
+```
+
+Feito isto, basta configurar a árvore de fontes:
+
+`./configure`
+
+Por fim, compilar:
+
+```shellscript
+make -C libdill
+make
+```

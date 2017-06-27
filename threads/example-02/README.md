@@ -26,3 +26,12 @@ atômicas. O _sleep_ pode ser interrompido espuriamente pela recepção de um
 sinal, o que faria com que uma das threads acordasse involuntariamente. Como não
 há como garantir quando cada thread irá trocar de contexto, são necessários o
 sincronismo e a notificação via condition variable.
+
+# Como construir o exemplo
+
+Basta configurar a árvore de fontes e, por fim, compilar:
+
+```shellscript
+./configure
+make
+```
