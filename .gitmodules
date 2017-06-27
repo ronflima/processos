@@ -1,0 +1,3 @@
+[submodule "threads/example-01/libdill"]
+	path = threads/example-01/libdill
+	url = https://github.com/sustrik/libdill.git
