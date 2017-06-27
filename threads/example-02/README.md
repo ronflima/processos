@@ -12,3 +12,17 @@ uma thread abrir mão de seu time sharing de forma cooperativa.
 Pelo fato de ser assíncrono, invariantes compartilhadas precisam ser protegidas
 em seções críticas, de forma que estejam sempre válidas durante todo o ciclo de
 vida do programa.
+
+## O programa
+
+Trata-se de um programa extremamente simples: ele dispara duas threads que
+dormem de forma independente no intuito de simular algum trabalho. Em teoria, a
+primeira thread deverá retornar primeiro, ajustando uma invariante e, por fim,
+notificando a main thread que retornou através de uma condition variable.
+
+Observe a dificuldade em ajustar o invariante _stop_ em cada thread. É
+necessário trabalhar com uma seção crítica para garantir que as alterações serão
+atômicas. O _sleep_ pode ser interrompido espuriamente pela recepção de um
+sinal, o que faria com que uma das threads acordasse involuntariamente. Como não
+há como garantir quando cada thread irá trocar de contexto, são necessários o
+sincronismo e a notificação via condition variable.
