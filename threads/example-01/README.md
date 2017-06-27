@@ -24,7 +24,7 @@ realizar uma troca de contexto em um tempo típico de 6ns. Em um linux,
 dependendo do processador, a troca de contexto pode demorar um tempo típico de
 50ns ou mais.
 
-# Malefícios
+## Malefícios
 
 Nem tudo são flores. É muito complicado criar um scheduler para trabalhar em
 user space. Além disso, qualquer thread que bloqueie o processamento por tempo
