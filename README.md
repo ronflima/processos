@@ -1,5 +1,3 @@
-![logo](img/nineteen-logo.png)
-
 # Processos, Threads e Fibers
 
 Este repositório é o material de apoio à palestra sobre processos, threads e
